@@ -1,0 +1,61 @@
+SQL WORKFLOW FOR DATA PIPELINE
+
+┌──────────────────────────────┐
+│        CSV SOURCE FILE       │
+│   resto_copy.csv (UTF-8)     │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        BASE TABLE            │
+│           resto              │
+│  raw load via COPY command   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌──────────────────────────────┐
+│        RAW SNAPSHOT          │
+│         resto_raw            │
+│  direct copy of base table   │
+└──────────────┬───────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│           STAGING TABLE                │
+│            resto_stage                 │
+│  - de-duplicate rows                   │
+│  - blank strings → NULL                │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│           CLEAN TABLE                  │
+│            resto_clean                 │
+│  - remove rows with missing essentials │
+│  - score cast to numeric               │
+│  - auto-cast date columns              │
+│  - drop empty location column          │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│        DATA QUALITY CHECKS             │
+│  - NULL counts by column               │
+│  - uniqueness checks (camis vs dba)    │
+│  - phone cleanup (regex)               │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│        STANDARDIZATION LAYER           │
+│  - cuisine_group classification        │
+│  - violation code grouping             │
+│  - violation_group mapping             │
+└──────────────┬─────────────────────────┘
+               │
+               ▼
+┌────────────────────────────────────────┐
+│      ANALYTICS-READY DATASET           │
+│        resto_clean (final)             │
+│  ready for EDA, reporting, dashboards  │
+└────────────────────────────────────────┘
