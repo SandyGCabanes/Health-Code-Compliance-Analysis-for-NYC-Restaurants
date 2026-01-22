@@ -71,7 +71,7 @@ Provide a clear picture of New York restaurant health inspection patterns to-dat
 
 
 # Preliminary SQL Analysis of Restaurant Inspections
-[Click here for the SQL script showing the preliminary analysis and results](sql/4._exploratory_analysis.sql)
+[Click here for the SQL script showing the preliminary analysis and results](https://github.com/SandyGCabanes/Health-Code-Compliance-Analysis-for-NYC-Restaurants/tree/main/sql)
 ## Summary 
 
 1. Cuisines are just a sub-plot of the entire story
