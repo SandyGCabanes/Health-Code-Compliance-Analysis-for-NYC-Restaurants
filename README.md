@@ -12,24 +12,24 @@
 
 # Description of Work Done: 
 ##### SQL: Data cleaning (removal of nulls), standardization, data exploration, additional research to map nta codes to neighborhoods, creation of dimension tables for standardization, preliminary analysis. 
-##### Power BI: Data exported from sql pulled into Power BI, fact table resto and dim tables dim_cuisine, dim_violation and violation groups, and dim_nta for actual neighborhood names.
-##### Python: Automated ELT Extraction to call API, and load csv file to designated input_file folder, and then transform for Power BI importation.
+#### Power BI: Data exported from sql pulled into Power BI, fact table resto and dim tables dim_cuisine, dim_violation and violation groups, and dim_nta for actual neighborhood names.
+#### Python: Automated ELT Extraction to call API, and load csv file to designated input_file folder, and then transform for Power BI importation.
 
 # Resources: 
-##### Software: pgAdmin for postgres SQL, Power BI for report, python in VSCode for the next extract -> load -> transform after downloading updated csv file.
+#### Software: pgAdmin for postgres SQL, Power BI for report, python in VSCode for the next extract -> load -> transform after downloading updated csv file.
 
-##### Original csv data set downloaded from this link on 2025-09-19 <br>
-https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data
+#### [Original csv data set downloaded from this link on 2025-09-19](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data)
 
-##### [Neighborhood names in NYC](https://data.cityofnewyork.us/City-Government/2010-Census-Tract-to-Neighborhood-Tabulation-Area-/8ius-dhrr/data_preview)
+#### [Neighborhood names in NYC](https://data.cityofnewyork.us/City-Government/2010-Census-Tract-to-Neighborhood-Tabulation-Area-/8ius-dhrr/data_preview)
 
-## [API Endpoint for Extraction with Python]("https://data.cityofnewyork.us/resource/43nn-pn8j.json")
+#### [API Endpoint for Extraction with Python](https://data.cityofnewyork.us/resource/43nn-pn8j.json)
 
 # Workflow:
-## For this project: SQL Transformations -> SQL Initial Analysis -> Csv files to directory -> Csv files imported to Power BI for Analysis 
-## Tested data pipeline:  
-Extract from API and load using python -> Transform using automated python data pipeline notebook  -> Load exported csv file to directory -> Refresh Power BI
-
+## For this project: 
+#### SQL Transformations -> SQL Initial Analysis -> Csv files to directory -> Csv files imported to Power BI for Analysis -> Power BI relationship defined
+![ERP digram](assets/resto_erp.PNG)
+## Tested data pipeline: Extract from API and load using python -> Transform using automated python data pipeline notebook  -> Load exported csv file to directory -> Refresh Power BI
+[Click here for the Python ELT script that automates extraction and loading](python/resto_auto_extraction_load.ipynb)
 
 
 # Power BI Dashboard Analysis
@@ -55,11 +55,11 @@ Provide a clear picture of New York restaurant health inspection patterns to-dat
 
 #### This leads to a deep-dive into Queens
 - Deep-dive scatterplot - borough slicer set to Queens - shows that Queensborough Hill, Elmhurst-Maspeth, Pomonok-Flushing, Flushing, Queens Village need focused attention with scores way above average.
-
+![Queens Deep Dive](assets/queens_deep_dive.PNG)
 
 ## Suggested Actions
 - Education programs should focus on Food Protection/ Cleanliness/ HACCP, Contamination/ Hygiene/ Vermin, and Temperature Control (TCS).
-- Monitor neighborhoods with persistent critical patterns and cuisines with higher percent critical violations for focused outreach or compliance programs.  
+- Monitor neighborhoods with persistent critical patterns and cuisines with higher percent critical violations for priority outreach or compliance programs.  
 - Track the continued rise in re-inspections as a signal that operators may need clearer guidance, or better tools and systems.  Use this trend to refine communication, training materials, and resources to make them more inspection-ready.  
 
 ![Power BI - Overview](assets/dashboard_page1.PNG)
@@ -71,37 +71,34 @@ Provide a clear picture of New York restaurant health inspection patterns to-dat
 
 
 # Preliminary SQL Analysis of Restaurant Inspections
-
-
-
-
+[Click here for the SQL script showing the preliminary analysis and results](sql/4.exoloratory_analysis.sql)
 ## Summary 
 
-##1. Cuisines aren’t the real story 
+1. Cuisines are just a sub-plot of the entire story
 - Some cuisine groups show high average scores and high critical rates, but they make up a tiny share of total inspections. 
 - Chasing them won’t move citywide outcomes.
 
-##2. Neighborhood patterns point to Queens 
+2. Neighborhood patterns point to Queens 
 - Queens repeatedly appears in the highest score neighborhoods. 
 - These hotspots are neighborhood-specific, not cuisine-driven. The issues cluster geographically, not culturally.
 
-##3. Borough performance is mixed
+3. Borough performance is mixed
 - Queens has the highest average scores and one of the highest critical violation proportions. 
 - Manhattan carries the inspection volume but not the best performance. 
 - Staten Island swings wildly year to year due to low sample sizes.
 
-##4. Violation types tell the clearest story
+4. Violation types tell the clearest story
 - Facility Maintenance, Lighting, Dishwashing, and Thermometers dominate the violation counts. 
 - These are basic operational failures, not exotic food-handling issues. 
 - Fixing these alone would meaningfully reduce total violations.
 
-##5. Time trends also tell a story
+5. Time trends also tell a story
 - Inspection volume jumps up starting 2022.  
 - Average scores are rising (worsening).  
 - Percent Grade A is falling across every borough.  
 - This is not a local problem. It’s a citywide downward trend.
 
-##6. What this all means
+6. What this all means
 - The system isn’t failing because of specific cuisines or a few bad neighborhoods.  
 - It’s fundamentals: cleanliness, maintenance, temperature control, and basic food safety.  
 - The decline in Grade A rates shows the city needs a broad reset, not targeted tweaks.
@@ -114,5 +111,8 @@ Provide a clear picture of New York restaurant health inspection patterns to-dat
 - Track cuisine categories (East Asian, Latin American, European, American) with highest volume of above-average scores.  Addressing these would make a bigger dent on overall scores rather than the niche categories.
 - Understand root causes of higher critical violations among the niche cuisine categories if resources allow. (African, South Asian, Southeast Asian, Fusion/ Contemporary). Evaluate if quick wins can be achieved with minimal solutions.
 
-[Postgres scripts](sql)
+[Click here for all the Postgres scripts](sql)
+
+[Click here for the SQL Workflow](sql/sql_workflow.txt)
+
 
