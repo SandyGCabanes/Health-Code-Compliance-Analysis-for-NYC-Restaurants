@@ -8,7 +8,7 @@
 
 - [Preliminary SQL Analysis of Restaurant Inspections](preliminary-sql-analysis-of-restaurant-inspections)
 
-- [Automated Data Prep for Power BI Using Python](python/pythonfiles)
+- [Automated Data Prep for Power BI Using Python](python/resto_auto_analysis.ipynb)
 
 # Description of Work Done: 
 ##### SQL: Data cleaning (removal of nulls), standardization, data exploration, additional research to map nta codes to neighborhoods, creation of dimension tables for standardization, preliminary analysis. 
