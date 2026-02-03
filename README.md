@@ -18,11 +18,11 @@
 # Resources: 
 #### Software: pgAdmin for postgres SQL, Power BI for report, python in VSCode for the next extract -> load -> transform after downloading updated csv file.
 
-#### [Original csv data set downloaded from this link on 2025-09-19]https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data
+#### [Original csv data set downloaded from this link on 2025-09-19](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j/about_data)
 
-#### [Neighborhood names in NYC]https://data.cityofnewyork.us/City-Government/2010-Census-Tract-to-Neighborhood-Tabulation-Area-/8ius-dhrr/data_preview
+#### [Neighborhood names in NYC](https://data.cityofnewyork.us/City-Government/2010-Census-Tract-to-Neighborhood-Tabulation-Area-/8ius-dhrr/data_preview)
 
-#### [API Endpoint for Extraction with Python]https://data.cityofnewyork.us/resource/43nn-pn8j.json
+#### [API Endpoint for Extraction with Python](https://data.cityofnewyork.us/resource/43nn-pn8j.json)
 
 # Workflow:
 ## For this project: 
