@@ -4,7 +4,7 @@
 ### Executive Overview  
 This report provides an assessment of restaurant health‑code compliance across New York City, using the latest inspection records from the Department of Health. The analysis highlights violation patterns, geographic hotspots, cuisine‑level trends, and shifts in inspection outcomes over time. Objective is to support targeted compliance programs, resource allocation, and public‑health interventions.
 
-The findings draw from a cleaned and standardized dataset, enriched with neighborhood mappings and structured into a consistent semantic layer for analysis.
+The findings come from a cleaned and standardized dataset, enriched with neighborhood mappings and structured into a consistent semantic layer for analysis.
 
 ---
 
