@@ -11,7 +11,8 @@ The findings come from a cleaned and standardized dataset, enriched with neighbo
 ## Key Findings  
 
 ### 1. Citywide performance is deteriorating  
-Average inspection scores have risen steadily since 2021 (higher scores = worse performance), and Grade A rates have declined across all boroughs. This indicates a broad weakening in compliance, not isolated issues.
+Average inspection scores have risen steadily since 2021 (higher scores = worse performance), and Grade A rates have declined across all boroughs. This indicates a broad weakening in compliance, not isolated issues.<br>
+![trends](https://github.com/SandyGCabanes/Health-Code-Compliance-Analysis-for-NYC-Restaurants/blob/main/assets/1.trends.PNG)
 
 ### 2. Critical violations remain persistently high  
 Roughly half of all violations in recent years are classified as critical. The most common issues involve:  
@@ -23,14 +24,20 @@ Roughly half of all violations in recent years are classified as critical. The m
 
 These are fundamental operational lapses, not niche or cuisine‑specific problems.
 
+![violations](https://github.com/SandyGCabanes/Health-Code-Compliance-Analysis-for-NYC-Restaurants/blob/main/assets/2.violations.PNG)
+
 ### 3. Queens requires focused attention  
 Queens consistently appears as the borough among the highest‑scoring (worst) neighborhoods. Deep‑dive analysis highlights clusters such as Queensborough Hill, Elmhurst‑Maspeth, Pomonok‑Flushing, Flushing, and Queens Village. These patterns are geographic rather than cuisine‑driven.
+
+![queens](https://github.com/SandyGCabanes/Health-Code-Compliance-Analysis-for-NYC-Restaurants/blob/main/assets/3.queens.PNG)
 
 ### 4. Cuisine patterns exist but have limited impact on citywide outcomes  
 Some cuisines (South Asian, African, Southeast Asian, Middle Eastern/North African, Chinese) show higher average scores and higher critical‑violation rates. However, many of these categories represent a small share of total inspections. Addressing them alone will not materially shift overall compliance.
 
 ### 5. Inspection activity has increased sharply since 2022  
 The rise in inspection volume suggests stronger enforcement or resumed activity post‑pandemic. Re‑inspections now outnumber initial inspections, indicating that many establishments are struggling to meet standards on the first visit.
+
+![inspections](https://github.com/SandyGCabanes/Health-Code-Compliance-Analysis-for-NYC-Restaurants/blob/main/assets/4.inspections.PNG)
 
 ---
 
